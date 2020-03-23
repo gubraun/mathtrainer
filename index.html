@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../../../favicon.ico"> -->
+
+    <title>Rechen-Trainer</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+    <div class="container mb-2 hidden" id="problemsPage">
+        <div class="text-center">
+            <h2>Rechen-Trainer</h2>
+            <p class="lead">Tragt Eure Lösungen in die Felder ein und klickt auf Überprüfen. Für einen neuen Satz
+                Aufgaben klickt Nochmal. Wollt Ihr die Anzahl und Art der Aufgaben ändern, klickt Zurück.</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <form id="problemsForm" autocomplete="off">
+                    <div class="problems-list"></div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <button type="submit" class="btn btn-primary btn-block" id="btnCheck">Überprüfen</button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-primary btn-block" id="btnRestart">Nochmal</button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-primary btn-block" id="btnSettings">Zurück</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="settingsPage">
+        <div class="text-center">
+            <h2>Rechen-Trainer</h2>
+            <p class="lead">Hier könnt Ihr Eure Skills im Kopfrechnen testen und verbessern. Einfach die Anzahl und
+                Art der Aufgaben auswählen und auf Start klicken.</p>
+        </div>
+        <div class=text-center>
+            <p class="lead">Highscore: <span id="highscore">0</span></p>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <form id="settingsForm" autocomplete="off">
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <label for="numberProblems">Wie viele Aufgaben?</label>
+                        </div>
+                        <div class="col">
+                            <input type="range" class="custom-range" id="numberProblems" value="5" min="1" max="25">
+                        </div>
+                        <div class="col">
+                            <span class="alert alert-secondary" id="numberProblemsLabel">5</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        Welche Art Aufgaben?
+                        <div class="mt-2">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="cbAdd" checked=true>
+                                <label class="custom-control-label" for="cbAdd">Addition</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="cbSub" checked=true>
+                                <label class="custom-control-label" for="cbSub">Subtraktion</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="cbMul">
+                                <label class="custom-control-label" for="cbMul">Multipikation</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="cbDiv">
+                                <label class="custom-control-label" for="cbDiv">Division</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="btnStart">Start</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <audio src="audio/gewonnen.wav" id="soundWon"></audio>
+    <audio src="audio/verloren.wav" id="soundLost"></audio>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script src="js/cookie.js"></script>
+    <script src="js/math-problem.js"></script>
+    <script src="js/problems-collection.js"></script>
+    <script src="js/settings-view.js"></script>
+    <script src="js/problems-view.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

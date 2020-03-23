@@ -1,0 +1,58 @@
+/* Hide HTML5 Up and Down arrows. */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+h2 {
+  text-align: center;
+}
+
+body {
+  padding-top: 5rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1.05em;
+}
+
+.prob-text-label {
+  text-align: right;
+}
+
+.hidden {
+  display:none;
+}
+
+/*
+h1, h2, h3, h4 {
+  margin-top: 2em;
+}
+
+p {
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  font-family: Charter, Georgia, Cambria, "Times New Roman", Times, serif;
+  line-height: 1.58;
+  letter-spacing: -0.004em;
+  margin-top: 2em;
+  margin-bottom: -0.46em;
+}
+*/
+
+#name-form {
+  border-width: 0px;
+}
+
