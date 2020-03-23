@@ -38,8 +38,8 @@ ProblemsView.prototype.initEvents = function () {
         }
         if (!$("#numberProblems").val()) {
             return;
-        }     
-        
+        }
+
         $('#btnCheck').attr('disabled', false);
         $('#btnRestart').attr('disabled', true);
 
@@ -71,8 +71,9 @@ ProblemsView.prototype.checkResults = function () {
     let i = 0;
 
     $('#problemsForm *').filter('.prob-input').each(function () {
-        isCorrect[i] = ($(this).val() == self.problemsCollection.problems[i].result);
-        
+        isCorrect[i] = (($(this).val() != "")
+            && ($(this).val() == self.problemsCollection.problems[i].result));
+
         $(this).attr('disabled', true);
         if (isCorrect[i]) {
             $(this).css("color", "#155724");
@@ -115,7 +116,7 @@ ProblemsView.prototype.checkResults = function () {
     let highscore = $("#highscore").text();
     if (score > highscore) {
         $("#highscore").html(score);
-        this.Cookie.setCookie("highscore",score,30);
+        this.Cookie.setCookie("highscore", score, 30);
     }
 }
 
